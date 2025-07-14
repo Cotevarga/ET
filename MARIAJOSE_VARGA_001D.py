@@ -35,39 +35,37 @@ def textoVacio(mensaje:str):
 def stock_marca(mensaje:str):
     marca = textoVacio(mensaje).upper()
     for i in productos:
-        if i.upper() == marca:
-            print(f"El stock es {i[2]}")
+        if i[0][1].upper() == marca:
+            print(f"El stock es {i[1]}")
 
-#def busqueda_precio(p_min, p_max):
-   # for i in stock:
-    #    if stock[1][0]
+def actualizar_precio(modelo,p):
+    modelo = textoVacio("ingrese modelo a buscar")
 
+def menu():
+    while True:
+        print(" *** MENÚ PRINCIPAL ***")
+        print(" [1] - STOCK MARCA")
+        print(" [2] - BUSQUEDA POR PRECIO")
+        print(" [3] - ACTUALIZAR PRECIO")
+        print(" [4] - SALIR")
 
-while True:
-    print(" *** MENÚ PRINCIPAL ***")
-    print(" [1] - STOCK MARCA")
-    print(" [2] - BUSQUEDA POR PRECIO")
-    print(" [3] - ACTUALIZAR PRECIO")
-    print(" [4] - SALIR")
+        opc = validaNumEntero("INGRESE UNA OPCION 1 al 4: ")
 
-    opc = validaNumEntero("INGRESE UNA OPCION 1 al 4: ")
+        if opc == 1: 
+         stock_marca()
+            
 
-    if opc == 1: 
+        elif opc == 2: 
+            print("2")
 
-        #marca = textoVacio("ingrese marca: ").upper()
-        for i in productos:
-    
-            print(f"El stock es {i[2]}")
-          
+        elif opc == 3: 
+            print("3")
 
-    elif opc == 2: 
-        print("1")
+        elif opc == 4: 
+            print("PROGRAMA FINALIZADO")
+            break
 
-    elif opc == 3: 
-        print("1")
+        else:
+            print("❌ OPCION NO VÁLIDA")
 
-    elif opc == 4: 
-        print("PROGRAMA FINALIZADO")
-        break
-    else:
-        print("❌ OPCION NO VÁLIDA")
+menu()
